@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public float musicVolume;
     public float sfxVolume;
 
+    public int Level = 1;
+
     public enum GAMESTATION : int
     {
         MENU,
@@ -29,6 +31,10 @@ public class GameManager : MonoBehaviour
         LEVEL3,
         LEVEL4,
         LEVEL5,
+        LEVEL6,
+        LEVEL7,
+        LEVEL8,
+        LEVEL9,
         END = 100
     }
 
@@ -86,12 +92,21 @@ public class GameManager : MonoBehaviour
     {
         LevelStart.instance.gamewinPanel.SetActive(true);
         PlayerController.instance.Live();
+        if(Level <= 9)
+        {
+            Level++;
+        }
     }
 
     public void Loss()
     {
         LevelStart.instance.gameoverPanel.SetActive(true);
         PlayerController.instance.Die();
+    }
+
+    public void Ending()
+    {
+
     }
 
     public void Quit()

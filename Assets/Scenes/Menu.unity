@@ -2903,9 +2903,9 @@ MonoBehaviour:
   sfxSound: []
   musicSource: {fileID: 1271254822}
   sfxSource: {fileID: 1253514980}
-  mixer: {fileID: 0}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 824d3eb1150d70b438fc41504a2cce4e, type: 2}
+  musicSlider: {fileID: 1294415332}
+  sfxSlider: {fileID: 2112274337}
 --- !u!4 &1802011285
 Transform:
   m_ObjectHideFlags: 0
