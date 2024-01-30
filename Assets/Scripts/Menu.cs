@@ -37,7 +37,7 @@ public class Menu : MonoBehaviour
     private void ClickStart()
     {
         StartCoroutine(WaitForSecond());
-        SceneManager.LoadScene("SelectLevel");
+        SceneManager.LoadScene("Tutorial");
     }
 
     private void ClickOption()

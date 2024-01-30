@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using KoreanTyper;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextTyping : MonoBehaviour
 {
     public TMP_Text message;
+    [TextArea]
     public List<string> originText;
 
     private void Start()
@@ -25,9 +27,10 @@ public class TextTyping : MonoBehaviour
             for (int i = 0; i <= strTypingLength; i++)
             {
                 message.text = originText[t].Typing(i);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
         }
+        SceneManager.LoadScene("SelectLevel");
     }
 }
