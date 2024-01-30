@@ -16,6 +16,18 @@ public class GameManager : MonoBehaviour
     public bool isGameWin;
     public bool isGameOver;
 
+    public enum GAMESTATION : int
+    {
+        MENU,
+        SELECTLEVEL,
+        LEVEL1 = 10,
+        LEVEL2,
+        LEVEL3,
+        LEVEL4,
+        LEVEL5,
+        END = 100
+    }
+
     private void Awake()
     {
         if(Instance == null)
