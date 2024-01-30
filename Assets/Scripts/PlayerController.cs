@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float zInput = Input.GetAxisRaw("Vertical");
 
-        float xMoveSpeed = xInput * moveSpeed;
-        float zMoveSpeed = zInput * moveSpeed;
+        float xMoveSpeed = xInput * moveSpeed * Time.deltaTime;
+        float zMoveSpeed = zInput * moveSpeed * Time.deltaTime;
 
         Vector3 newVelocity = new Vector3(xMoveSpeed, 0f, zMoveSpeed);
 
         rb.velocity = newVelocity;
     }
 
-    private void Die()
+    public void Die()
     {
         gameObject.SetActive(false);
     }
