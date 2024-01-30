@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     private Rigidbody rb;
     public float moveSpeed = 8f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -30,8 +37,17 @@ public class PlayerController : MonoBehaviour
         rb.velocity = newVelocity;
     }
 
+    public void Live()
+    {
+        gameObject.SetActive(false);
+
+        GameManager.Instance.isGameWin = true;
+    }
+
     public void Die()
     {
         gameObject.SetActive(false);
+
+        GameManager.Instance.isGameOver = true;
     }
 }

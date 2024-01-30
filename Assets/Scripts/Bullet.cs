@@ -20,11 +20,14 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController controller = other.GetComponent<PlayerController>();
-            if(controller != null)
+            if(PlayerController.instance != null)
             {
-                controller.Die();
+                PlayerController.instance.Die();
             }
+        }
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
     }
 }
