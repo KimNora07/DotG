@@ -31,6 +31,7 @@ public class Menu : MonoBehaviour
         ExitButton.onClick.AddListener(ClickExit);
         BackButton.onClick.AddListener(ClickBack);
         SelectedMenu(_Menuindex, _Buttonindex, _Sliderindex);
+        GameManager.Instance.gameStation = GameManager.GAMESTATION.MENU;
     }
 
     private void ClickStart()
@@ -44,9 +45,10 @@ public class Menu : MonoBehaviour
         if(isOption == false)
         {
             isOption = true;
+            GameManager.Instance.gameStation = GameManager.GAMESTATION.OPTION;
             _Menuindex = 1;
-            _Buttonindex = 3;
-            _Sliderindex = -1;
+            _Buttonindex = -1;
+            _Sliderindex = 0;
             StartCoroutine(WaitForSecond());
         }
     }
@@ -62,6 +64,7 @@ public class Menu : MonoBehaviour
         if(isOption == true)
         {
             isOption = false;
+            GameManager.Instance.gameStation = GameManager.GAMESTATION.MENU;
             _Menuindex = 0;
             _Buttonindex = 0;
             _Sliderindex = -1;

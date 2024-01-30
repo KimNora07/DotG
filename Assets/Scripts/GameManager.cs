@@ -16,10 +16,14 @@ public class GameManager : MonoBehaviour
     public bool isGameWin;
     public bool isGameOver;
 
+    public float musicVolume;
+    public float sfxVolume;
+
     public enum GAMESTATION : int
     {
         MENU,
         SELECTLEVEL,
+        OPTION,
         LEVEL1 = 10,
         LEVEL2,
         LEVEL3,
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
         LEVEL5,
         END = 100
     }
+
+    public GAMESTATION gameStation;
 
     private void Awake()
     {
@@ -37,10 +43,19 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
         }
 
         Application.targetFrameRate = 60;
+    }
+
+    void OnEnable()
+    {
+        musicVolume = 1.0f;
+        sfxVolume = 1.0f;
     }
 
     public void StartGame()
