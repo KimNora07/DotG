@@ -19,22 +19,15 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.UpArrow) == true)
-        {
-            rb.AddForce(0f, 0f, moveSpeed);
-        }
-        if (Input.GetKey(KeyCode.DownArrow) == true)
-        {
-            rb.AddForce(0f, 0f, -moveSpeed);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow) == true)
-        {
-            rb.AddForce(-moveSpeed, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.RightArrow) == true)
-        {
-            rb.AddForce(moveSpeed, 0f, 0f);
-        }
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float zInput = Input.GetAxisRaw("Vertical");
+
+        float xMoveSpeed = xInput * moveSpeed;
+        float zMoveSpeed = zInput * moveSpeed;
+
+        Vector3 newVelocity = new Vector3(xMoveSpeed, 0f, zMoveSpeed);
+
+        rb.velocity = newVelocity;
     }
 
     private void Die()
