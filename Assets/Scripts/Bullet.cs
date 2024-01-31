@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
 
         rb.velocity = transform.forward * moveSpeed;
 
-        Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +24,11 @@ public class Bullet : MonoBehaviour
                 PlayerController.instance.Die();
             }
         }
-        if (other.gameObject.CompareTag("Wall"))
+        else if (other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Plane"))
         {
             Destroy(gameObject);
         }

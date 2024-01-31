@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         {
             if (!isGameWin)
             {
-                LevelStart.instance.timeText.text = "Time: " + (int)survivalTime;
+                LevelStart.instance.timeText.text = "남은시간: " + (int)survivalTime;
                 if (survivalTime <= 0)
                 {
                     Win();
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
         if(levelIndex < 9 )
         {
             levelIndex += 1;
+            levelgameTime += 5f;
         }
     }
 
