@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     public float musicVolume;
     public float sfxVolume;
 
-    public int Level = 1;
+    public int levelIndex;
 
     public enum GAMESTATION : int
     {
@@ -92,9 +93,9 @@ public class GameManager : MonoBehaviour
     {
         LevelStart.instance.gamewinPanel.SetActive(true);
         PlayerController.instance.Live();
-        if(Level <= 9)
+        if(levelIndex < 9 )
         {
-            Level++;
+            levelIndex += 1;
         }
     }
 
