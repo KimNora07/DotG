@@ -3836,6 +3836,7 @@ MonoBehaviour:
   - {fileID: 1925027000}
   - {fileID: 240953646}
   - {fileID: 29041657}
+  levelsTime: 0a0000000f000000140000001e0000003200000019000000230000000f0000003c000000
   nextButton: {fileID: 1073644378}
 --- !u!4 &566600113
 Transform:
@@ -8102,7 +8103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1390549498
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class LevelStart : MonoBehaviour
     public GameObject gameoverPanel;
     public TMP_Text timeText;
     public GameObject[] levels;
+    public int[] levelsTime;
     public Button nextButton;
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class LevelStart : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.levelgameTime = levelsTime[GameManager.Instance.levelIndex];
         GameManager.Instance.survivalTime = GameManager.Instance.levelgameTime;
         nextButton.onClick.AddListener(Next);
         GameManager.Instance.isGameWin = false;
